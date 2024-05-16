@@ -5,12 +5,38 @@ body {
     padding: 0;
 }
 
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 230px;
+    height: 330px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex-grow: 1;
+    margin-left: 20px; /* 写真と文章の間隔を設定 */
+    max-width: 60%; /* 文章の最大幅を設定 */
+}
+
+.profile-info p {
+    text-align: left; /* 文章を左寄せにする */
+    color: #666;
+}
+
+
 section {
     background-color: #fff;
     border-radius: 10px;
     margin: 20px auto;
     padding: 20px;
-    max-width: 600px;
+    max-width: 800px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -21,26 +47,13 @@ h2 {
     text-align: center;
 }
 
-img {
-    display: block;
-    margin: 0 auto;
-    border-radius: 50%;
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-}
-p {
-    color: #666;
-    text-align: center;
-}
-
 form {
-    text-align: center;
+    text-align: left;
+    padding: 20px 200px;
 }
 
 input[type="text"],
-input[type="email"],
-textarea {
+input[type="email"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -48,6 +61,23 @@ textarea {
     border-radius: 5px;
     box-sizing: border-box;
 }
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-size: 16px; /* フォントサイズを16pxに設定 */
+    height: 150px; /* テキストエリアの高さを150pxに設定 */
+}
+
+.form-submit {
+    text-align: center; /* ボタンを中央揃えにする */
+}
+
 
 input[type="submit"] {
     background-color: #4CAF50;
@@ -62,19 +92,46 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
+.comments-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
 .comment {
-    margin-bottom: 20px;
-    padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #4CAF50; /* 枠を追加 */
+    transition: transform 0.2s, box-shadow 0.2s; /* ホバーアニメーション */
+   
+}
+
+.comment:hover {
+    transform: translateY(-5px); /* ホバー時に少し浮かせる */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ホバー時のシャドウを濃くする */
 }
 
 .comment p {
-    margin: 0;
-    padding: 0;
+    margin: 10px 0;
 }
 
 .comment strong {
     color: #333;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-size: 16px; /* フォントサイズを16pxに設定 */
 }

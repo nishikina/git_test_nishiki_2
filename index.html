@@ -10,33 +10,34 @@
 <body>
     <section>
         <h2>錦夏未</h2>
-        <div>
+        <div class="profile">
             <img src="./image/zakoshi.avif" alt="Your Photo">
-            <p>一番好きなお笑い芸人はハリウッドザコシショウです。</p>
+            <div class="profile-info">
+                <p>一番好きなお笑い芸人はハリウッドザコシショウです。</p>
+            </div>
         </div>
-        <div><h2>小山明美</h2><br>
-        <img src="./image/hannin.jpg" height="auto" width="250">
-        フロリダ州のオレンジ畑のど真ん中で育った日本人です。<br>
-        趣味はゲームと読書。好きな運動は水泳。<br>
-        全然効果は出てないけど、筋トレが大好きです。<br>
-        多分食べるのも好きなせいです。<br>
-        学生の頃は学芸員を目指していたので、水族館、動物園、博物館、美術館に詳しい。
-    </div>
     </section>
+    
+    <section>
+        <h2>小山明美</h2>
+        <div class="profile">
+            <img src="./image/hannin.jpg" height="auto" width="250">
+            <div class="profile-info">
+                <p>フロリダ州のオレンジ畑のど真ん中で育った日本人です。<br>
+                趣味はゲームと読書。好きな運動は水泳。<br>
+                全然効果は出てないけど、筋トレが大好きです。<br>
+                多分食べるのも好きなせいです。<br>
+                学生の頃は学芸員を目指していたので、<br>
+                水族館、動物園、博物館、美術館に詳しい。</p>
+            </div>
+        </div>
+    </section>
+    
 
     <section>
         <h2>お問い合わせフォーム</h2>
         <form id="contactForm">
-            <label for="name">名前:</label>
-            <input type="text" id="name" name="name" required><br>
-
-            <label for="email">メールアドレス:</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <label for="message">メッセージ:</label><br>
-            <textarea id="message" name="message" required></textarea><br>
-
-            <label for="subject">どちらへのお問い合わせですか？:</label>
+            <label for="subject">どちらの方へのお問い合わせですか？:</label>
             <br>
             <select id="subject" name="subject">
                 <option value="1">錦さん</option>
@@ -53,16 +54,30 @@
             </select>
             <br>
             <br>
+            <label for="name">名前:</label>
+            <input type="text" id="name" name="name" required><br>
 
-            <input type="submit" value="送信">
+            <label for="email">メールアドレス:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="message">メッセージ:</label><br>
+            <textarea id="message" name="message" required></textarea><br>
+
+            
+            <br>
+            <br>
+            <div class="form-submit">
+                <input type="submit" value="送信">
+            </div>
+            
         </form>
     </section>
 
     <section>
         <h2>今日もらったコメント <button id="loadComments">コメントをロード</button></h2>
-        <div id="commentsContainer"></div>
+        <div id="commentsContainer" class="comments-container"></div>
     </section>
-
+    
     <script>
         $(document).ready(function() {
             $('#contactForm').on('submit', function(e) {
